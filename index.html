@@ -9,25 +9,29 @@
     <style>
         body { font-family: 'Pretendard', sans-serif; word-break: keep-all; }
         .hero-gradient { background: radial-gradient(circle at top right, #3b82f6, #1e3a8a); }
-        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); }
+        /* 코드 강조 효과를 위한 스타일 */
+        .code-keyword { color: #d97706; font-weight: bold; }
+        .code-function { color: #2563eb; }
+        .code-string { color: #059669; }
+        .code-comment { color: #94a3b8; font-style: italic; }
     </style>
 </head>
 <body class="bg-slate-50">
 
     <header class="fixed w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-black text-blue-900 tracking-tighter">PRIMING SOLUTIONS</h1>
+            <h1 class="text-2xl font-black text-blue-900 tracking-tighter cursor-pointer">PRIMING SOLUTIONS</h1>
             <nav class="hidden md:flex space-x-10 text-slate-600 font-semibold uppercase tracking-wide text-sm">
                 <a href="#vision" class="hover:text-blue-600 transition">Vision</a>
                 <a href="#solutions" class="hover:text-blue-600 transition">Solutions</a>
-                <a href="#tech-stack" class="hover:text-blue-600 transition">Tech Stack</a>
                 <a href="#contact" class="text-blue-700 hover:text-blue-900 transition">Contact Us</a>
             </nav>
         </div>
     </header>
 
     <section class="hero-gradient pt-48 pb-32 px-6 text-white overflow-hidden relative">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
             <div>
                 <h2 class="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1]">
                     Beyond Digital,<br>Toward <span class="text-blue-300">Trust.</span>
@@ -41,45 +45,55 @@
                     <a href="#contact" class="border border-white/50 px-10 py-4 rounded-xl font-bold hover:bg-white/10 transition-all">파트너십 문의</a>
                 </div>
             </div>
-            <div class="hidden md:block relative">
-                <div class="absolute -top-20 -right-20 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"></div>
-                <div class="glass-card p-8 rounded-3xl border border-white/20 shadow-2xl">
-                    <div class="flex space-x-2 mb-4">
+
+            <div class="relative">
+                <div class="absolute -top-10 -right-10 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl"></div>
+                <div class="glass-card p-8 rounded-3xl border border-white/30 shadow-2xl relative">
+                    <div class="flex space-x-2 mb-6 border-b border-slate-200 pb-4">
                         <div class="w-3 h-3 bg-red-400 rounded-full"></div>
                         <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
                         <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                        <span class="text-[10px] text-slate-400 pl-2 font-mono uppercase tracking-widest">Priming_Integrity_Protocol.js</span>
                     </div>
-                    <code class="text-blue-900 text-sm font-mono">
-                        // Priming Solutions Integrity Protocol<br>
-                        if (data.verify(blockchain)) {<br>
-                        &nbsp;&nbsp;return "Trust Established";<br>
-                        }
-                    </code>
+                    <pre class="text-blue-900 text-sm font-mono leading-relaxed overflow-x-auto">
+<span class="code-comment">// 프라이밍 솔루션 기부금 및 자산 무결성 검증 프로토콜</span>
+<span class="code-keyword">async function</span> <span class="code-function">verifyIntegrity</span>(record) {
+  <span class="code-keyword">const</span> isAuthentic = <span class="code-keyword">await</span> Blockchain.<span class="code-function">verify</span>(record);
+  
+  <span class="code-keyword">if</span> (isAuthentic) {
+    <span class="code-keyword">return</span> <span class="code-string">"✅ Trust Established"</span>;
+  } <span class="code-keyword">else</span> {
+    <span class="code-keyword">throw new</span> <span class="code-function">Error</span>(<span class="code-string">"Integrity Violation Detected"</span>);
+  }
+}
+
+<span class="code-comment">// 시스템 상태: 활성화됨</span>
+<span class="code-function">monitor</span>(<span class="code-string">"Priming Solutions Network"</span>);</pre>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="vision" class="py-24 max-w-7xl mx-auto px-6">
+    <section id="vision" class="py-24 max-w-7xl mx-auto px-6 border-b border-slate-100">
         <div class="text-center mb-20">
-            <h3 class="text-blue-600 font-bold tracking-widest uppercase mb-4">Core Vision</h3>
+            <h3 class="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">Core Vision</h3>
             <h2 class="text-4xl font-bold text-slate-900">신뢰를 기술로 증명합니다</h2>
         </div>
-        <div class="grid md:grid-cols-3 gap-10">
+        <div class="grid md:grid-cols-3 gap-10 text-center">
             <div class="group p-10 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-2xl transition-all">
-                <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-blue-600 group-hover:rotate-12 transition-all">🔗</div>
+                <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl mb-8 mx-auto group-hover:bg-blue-600 group-hover:rotate-12 transition-all">🔗</div>
                 <h4 class="text-2xl font-bold mb-4">무결성(Integrity)</h4>
-                <p class="text-slate-500 leading-relaxed text-lg">블록체인 기술을 통해 데이터의 위변조가 불가능한 시스템을 구축하여 절대적 신뢰를 제공합니다.</p>
+                <p class="text-slate-500 leading-relaxed">블록체인을 통해 데이터의 위변조가 불가능한 시스템을 구축하여 절대적 신뢰를 제공합니다.</p>
             </div>
             <div class="group p-10 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-2xl transition-all">
-                <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-blue-600 group-hover:rotate-12 transition-all">💡</div>
+                <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl mb-8 mx-auto group-hover:bg-blue-600 group-hover:rotate-12 transition-all">💡</div>
                 <h4 class="text-2xl font-bold mb-4">혁신(Innovation)</h4>
-                <p class="text-slate-500 leading-relaxed text-lg">기존의 복잡한 행정 및 거래 프로세스를 스마트 컨트랙트로 자동화하여 효율성을 극대화합니다.</p>
+                <p class="text-slate-500 leading-relaxed">복잡한 행정 및 거래 프로세스를 스마트 컨트랙트로 자동화하여 효율성을 극대화합니다.</p>
             </div>
             <div class="group p-10 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 hover:shadow-2xl transition-all">
-                <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-blue-600 group-hover:rotate-12 transition-all">🌐</div>
+                <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl mb-8 mx-auto group-hover:bg-blue-600 group-hover:rotate-12 transition-all">🌐</div>
                 <h4 class="text-2xl font-bold mb-4">연결(Connectivity)</h4>
-                <p class="text-slate-500 leading-relaxed text-lg">파편화된 디지털 자산을 하나의 생태계로 연결하여 글로벌 비즈니스 확장성을 지원합니다.</p>
+                <p class="text-slate-500 leading-relaxed">파편화된 디지털 자산을 하나의 생태계로 연결하여 글로벌 비즈니스 확장을 지원합니다.</p>
             </div>
         </div>
     </section>
@@ -88,29 +102,27 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div>
-                    <h3 class="text-blue-400 font-bold uppercase tracking-widest mb-4">Main Solutions</h3>
+                    <h3 class="text-blue-400 font-bold uppercase tracking-widest mb-4 text-sm font-mono">Main Solutions</h3>
                     <h2 class="text-4xl md:text-5xl font-bold">프라이밍 솔루션의 핵심 기술</h2>
                 </div>
-                <p class="text-slate-400 max-w-md text-lg">우리는 가장 안정적인 블록체인 네트워크를 활용하여 비즈니스의 투명성을 설계합니다.</p>
+                <p class="text-slate-400 max-w-md">가장 안정적인 블록체인 네트워크를 활용하여 비즈니스의 투명성을 설계합니다.</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="border-l-4 border-blue-600 pl-8 py-4">
-                    <h3 class="text-2xl font-bold mb-6 italic text-blue-500 font-mono">01.</h3>
-                    <h4 class="text-3xl font-bold mb-6 text-white">독자적 토큰 이코노미 설계</h4>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-8">기부, 보상, 결제 등 비즈니스 목적에 최적화된 맞춤형 토큰 아키텍처를 설계하고 발행합니다. 스마트 컨트랙트를 통한 보안 검증은 기본입니다.</p>
+                    <h4 class="text-3xl font-bold mb-6 text-white leading-tight">독자적 토큰 이코노미 설계</h4>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-8">기부, 보상, 결제 등 비즈니스 목적에 최적화된 맞춤형 토큰 아키텍처를 설계합니다. 스마트 컨트랙트를 통한 보안 검증은 기본입니다.</p>
                     <ul class="space-y-3 text-blue-300 font-semibold">
-                        <li>+ 맞춤형 메인넷 연동 (Polygon, Ethereum, etc.)</li>
-                        <li>+ 스마트 컨트랙트 최적화 및 보안 검수</li>
+                        <li>+ 맞춤형 메인넷 연동 및 최적화</li>
+                        <li>+ 스마트 컨트랙트 보안 검수(Audit) 지원</li>
                     </ul>
                 </div>
                 <div class="border-l-4 border-blue-600 pl-8 py-4">
-                    <h3 class="text-2xl font-bold mb-6 italic text-blue-500 font-mono">02.</h3>
-                    <h4 class="text-3xl font-bold mb-6 text-white">디지털 자산 관리 대시보드</h4>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-8">복잡한 블록체인 트랜잭션을 한눈에 파악할 수 있는 고도화된 ERP 관리 시스템을 제공합니다. 관리자와 사용자 모두를 위한 직관적인 UI를 지향합니다.</p>
+                    <h4 class="text-3xl font-bold mb-6 text-white leading-tight">디지털 자산 관리 대시보드</h4>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-8">복잡한 블록체인 트랜잭션을 한눈에 파악할 수 있는 고도화된 통합 관리 시스템을 제공합니다. 투명한 공시 기능을 지원합니다.</p>
                     <ul class="space-y-3 text-blue-300 font-semibold">
                         <li>+ 실시간 자산 흐름 추적 및 시각화</li>
-                        <li>+ 다국어 지원 및 글로벌 확장 인터페이스</li>
+                        <li>+ 글로벌 확장형 인터페이스 구축</li>
                     </ul>
                 </div>
             </div>
@@ -121,26 +133,25 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
             <div class="max-w-sm">
                 <h2 class="text-3xl font-black text-blue-900 mb-8 tracking-tighter">PRIMING SOLUTIONS</h2>
-                <p class="text-slate-500 text-lg mb-8 leading-relaxed">
-                    프라이밍 솔루션은 비영리 및 영리 법인의 디지털 혁신을 선도하는 기술 파트너입니다. 우리와 함께 투명한 미래를 설계하세요.
+                <p class="text-slate-500 text-lg leading-relaxed mb-4">
+                    프라이밍 솔루션은 비영리 및 영리 법인의 디지털 혁신을 선도하는 기술 파트너입니다.
                 </p>
-                <div class="flex space-x-4">
-                    </div>
+                <p class="text-slate-400 italic">"신뢰를 기술로 증명합니다."</p>
             </div>
             <div class="w-full md:max-w-md bg-slate-50 p-10 rounded-3xl border border-slate-200">
-                <h4 class="text-xl font-bold mb-8">Partner Inquiry</h4>
+                <h4 class="text-xl font-bold mb-8">Contact Us</h4>
                 <div class="space-y-6 text-slate-700">
-                    <p class="flex items-center gap-4"><span class="text-blue-600 text-xl font-bold w-8">📍</span> 경기도 수원시 (설립 준비 중)</p>
-                    <p class="flex items-center gap-4"><span class="text-blue-600 text-xl font-bold w-8">📧</span> info@primingsolutions.co.kr</p>
-                    <p class="flex items-center gap-4"><span class="text-blue-600 text-xl font-bold w-8">📞</span> 010-XXXX-XXXX (Bong-woo Nam)</p>
+                    <p class="flex items-center gap-4"><span class="text-blue-600 font-bold w-8 text-center text-xl">📍</span> 경기도 수원시 (설립 준비 중)</p>
+                    <p class="flex items-center gap-4"><span class="text-blue-600 font-bold w-8 text-center text-xl">📧</span> info@primingsolutions.co.kr</p>
+                    <p class="flex items-center gap-4"><span class="text-blue-600 font-bold w-8 text-center text-xl">📞</span> 010-XXXX-XXXX (Bong-woo Nam)</p>
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-24 pt-8 border-t border-slate-100 text-slate-400 text-sm flex flex-col md:flex-row justify-between gap-4">
+        <div class="max-w-7xl mx-auto mt-24 pt-8 border-t border-slate-100 text-slate-400 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
             <p>© 2026 Priming Solutions. All rights reserved.</p>
             <div class="flex gap-8">
-                <a href="#" class="hover:text-blue-600">Privacy Policy</a>
-                <a href="#" class="hover:text-blue-600">Terms of Service</a>
+                <a href="#" class="hover:text-blue-600 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-600 transition">Terms of Service</a>
             </div>
         </div>
     </footer>
