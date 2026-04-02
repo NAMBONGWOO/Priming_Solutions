@@ -8,15 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Pretendard', sans-serif; word-break: keep-all; }
+        /* 메인 배경 그라데이션 (파란색) */
         .hero-gradient { background: radial-gradient(circle at top right, #3b82f6, #1e3a8a); }
-        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
-        
-        /* 실제 코드처럼 색상을 입히는 스타일 (Syntax Highlighting) */
-        .code-keyword { color: #d97706; font-weight: bold; } /* 주황색: async, function 등 */
-        .code-function { color: #2563eb; } /* 파란색: 함수명 */
-        .code-string { color: #059669; } /* 초록색: "글자" */
-        .code-comment { color: #94a3b8; font-style: italic; } /* 회색: 주석 */
-        .code-operator { color: #7c3aed; } /* 보라색: =, !, { 등 */
+        /* 이미지 액자 스타일 (유리 같은 느낌) */
+        .glass-frame { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
     </style>
 </head>
 <body class="bg-slate-50">
@@ -27,15 +22,15 @@
             <nav class="hidden md:flex space-x-10 text-slate-600 font-semibold uppercase tracking-wide text-sm">
                 <a href="#vision" class="hover:text-blue-600 transition">Vision</a>
                 <a href="#solutions" class="hover:text-blue-600 transition">Solutions</a>
-                <a href="#contact" class="text-blue-700 hover:text-blue-900 transition font-bold underline underline-offset-8">Contact Us</a>
+                <a href="#contact" class="text-blue-700 hover:text-blue-900 transition">Contact Us</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero-gradient pt-48 pb-32 px-6 text-white overflow-hidden relative">
+    <section class="hero-gradient pt-48 pb-32 px-6 text-white overflow-hidden relative border-b-4 border-blue-600">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16">
             <div>
-                <h2 class="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1]">
+                <h2 class="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight">
                     Beyond Digital,<br>Toward <span class="text-blue-300">Trust.</span>
                 </h2>
                 <p class="text-xl md:text-2xl opacity-90 mb-12 font-light leading-relaxed">
@@ -50,28 +45,16 @@
 
             <div class="relative">
                 <div class="absolute -top-10 -right-10 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl"></div>
-                <div class="glass-card p-8 rounded-3xl border border-white shadow-2xl relative">
-                    <div class="flex space-x-2 mb-6 border-b border-slate-100 pb-4">
-                        <div class="w-3 h-3 bg-red-400 rounded-full shadow-inner"></div>
-                        <div class="w-3 h-3 bg-yellow-400 rounded-full shadow-inner"></div>
-                        <div class="w-3 h-3 bg-green-400 rounded-full shadow-inner"></div>
-                        <span class="text-[10px] text-slate-400 pl-3 font-mono tracking-widest uppercase">Integrity_Protocol.js</span>
+                
+                <div class="glass-frame p-4 rounded-3xl border border-white/50 shadow-2xl relative overflow-hidden">
+                    <div class="flex space-x-2 mb-4 border-b border-slate-100 pb-3">
+                        <div class="w-3 h-3 bg-slate-300 rounded-full"></div>
+                        <div class="w-3 h-3 bg-slate-300 rounded-full"></div>
+                        <div class="w-3 h-3 bg-slate-300 rounded-full"></div>
+                        <span class="text-[11px] text-slate-400 pl-3 font-mono tracking-widest uppercase">Technology & Vision</span>
                     </div>
                     
-                    <pre class="text-slate-800 text-sm font-mono leading-relaxed whitespace-pre-wrap">
-<span class="code-comment">// Priming Solutions Integrity Check</span>
-<span class="code-keyword">async function</span> <span class="code-function">verifyIntegrity</span>(record) <span class="code-operator">{</span>
-  <span class="code-keyword">const</span> isAuthentic <span class="code-operator">=</span> <span class="code-keyword">await</span> Blockchain.<span class="code-function">verify</span>(record);
-  
-  <span class="code-keyword">if</span> (isAuthentic) <span class="code-operator">{</span>
-    <span class="code-keyword">return</span> <span class="code-string">"✅ Trust Established"</span>;
-  <span class="code-operator">}</span> <span class="code-keyword">else</span> <span class="code-operator">{</span>
-    <span class="code-keyword">throw new</span> <span class="code-function">Error</span>(<span class="code-string">"Violation Detected"</span>);
-  <span class="code-operator">}</span>
-<span class="code-operator">}</span>
-
-<span class="code-comment">// Monitoring Priming Network...</span>
-<span class="code-function">status</span>(<span class="code-string">"Active"</span>);</pre>
+                    <img src="hero-image.png" alt="Priming Solutions Technology Concept" class="w-full h-auto rounded-2xl shadow-inner">
                 </div>
             </div>
         </div>
@@ -83,17 +66,17 @@
             <h2 class="text-4xl font-bold text-slate-900">신뢰를 기술로 증명합니다</h2>
         </div>
         <div class="grid md:grid-cols-3 gap-10 text-center">
-            <div class="p-10 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 transition-all cursor-default">
+            <div class="p-10 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 transition-all cursor-default shadow-sm hover:shadow-lg">
                 <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl mb-8 mx-auto">🔗</div>
                 <h4 class="text-2xl font-bold mb-4">무결성</h4>
                 <p class="text-slate-500 leading-relaxed">블록체인으로 위변조가 불가능한 데이터를 구축합니다.</p>
             </div>
-            <div class="p-10 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 transition-all cursor-default">
+            <div class="p-10 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 transition-all cursor-default shadow-sm hover:shadow-lg">
                 <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl mb-8 mx-auto">💡</div>
                 <h4 class="text-2xl font-bold mb-4">혁신</h4>
                 <p class="text-slate-500 leading-relaxed">스마트 컨트랙트를 통한 프로세스 자동화를 실현합니다.</p>
             </div>
-            <div class="p-10 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 transition-all cursor-default">
+            <div class="p-10 bg-white rounded-3xl border border-slate-200 hover:border-blue-500 transition-all cursor-default shadow-sm hover:shadow-lg">
                 <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl mb-8 mx-auto">🌐</div>
                 <h4 class="text-2xl font-bold mb-4">연결</h4>
                 <p class="text-slate-500 leading-relaxed">글로벌 비즈니스를 위한 최적의 기술 생태계를 제공합니다.</p>
@@ -121,7 +104,7 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
             <div class="max-w-sm">
                 <h2 class="text-3xl font-black text-blue-900 mb-6 tracking-tighter">PRIMING SOLUTIONS</h2>
-                <p class="text-slate-500 text-lg mb-4">비영리 및 영리 법인의 디지털 혁신을 선도하는 기술 파트너입니다.</p>
+                <p class="text-slate-500 text-lg mb-4 leading-relaxed">비영리 및 영리 법인의 디지털 혁신을 선도하는 기술 파트너입니다.</p>
                 <p class="text-slate-400 italic">"신뢰를 기술로 증명합니다."</p>
             </div>
             <div class="w-full md:max-w-md bg-slate-50 p-10 rounded-3xl border border-slate-200">
